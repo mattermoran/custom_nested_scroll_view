@@ -148,6 +148,7 @@ class _NestedScrollCoordinatorY extends _NestedScrollCoordinator {
       minRange: 0,
       maxRange: 0,
       correctionOffset: 0,
+      devicePixelRatio: _outerPosition!.devicePixelRatio,
     );
   }
 
@@ -217,7 +218,8 @@ class _NestedScrollPositionY extends _NestedScrollPosition {
           activity?.shouldIgnorePointer ?? true,
         );
       case _NestedBallisticScrollActivityMode.independent:
-        return BallisticScrollActivity(this, simulation, context.vsync, activity?.shouldIgnorePointer ?? true);
+        return BallisticScrollActivity(this, simulation, context.vsync,
+            activity?.shouldIgnorePointer ?? true);
     }
   }
 }
